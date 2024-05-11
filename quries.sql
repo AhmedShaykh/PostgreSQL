@@ -1,14 +1,26 @@
+1- \? (The list of all commands)
+2- \l (The list of databases)
+3- \q (quite)
+
 create database test;
+
+1- psql -h localhost -p 5432 -U postgres test
+2- \c databasename
 
 drop database test;
 
 create table person(id INT, first_name VARCHAR(50), last_name VARCHAR(50), gender VARCHAR(7), date_of_birth DATE);
+
+1-\d
+2-\d tablename
 
 drop table person;
 
 create table person(id BIGSERIAL NOT NULL PRIMARY KEY, first_name VARCHAR(50) NOT NULL, last_name VARCHAR(50) NOT NULL, gender VARCHAR(7) NOT NULL, email VARCHAR(100));
 
 INSERT INTO person(first_name, last_name, gender, date_of_birth) VALUES ("Ahmed", "Shaykh", "Male", "2000-09-27");
+
+\i sql file path
 
 SELECT * FROM person ORDER BY country_of_birth;
 SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth; -> Remove duplicate columns;
